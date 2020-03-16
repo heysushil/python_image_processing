@@ -4,10 +4,14 @@ import matplotlib
 
 from skimage import data
 
+
+# -----------------------------------------------------------------------
 # Specific images
 matplotlib.rcParams['font.size'] = 18
 # print(matplotlib.rcParams['font.size'])
 
+
+# -----------------------------------------------------------------------
 # Stereo images - get bike image on side by side by this exampel
 # By submodul pyplot of matplotlib given row coloum and size of image
 # in function box 1= row, 2 = column, figsize = show ouput box size
@@ -24,6 +28,16 @@ ax[1].imshow(images[1]) # for second image
 fig.tight_layout() # get the layout how to show the image on outpur
 plt.show() # by submodul pyplot show the images side by side
 
+# -----------------------------------------------------------------------
+# Faces and non-faces dataset
+# A sample of 20 over 200 images is displayed.
 
-
+fig, axes = plt.subplots(4, 5, figsize=(20, 20))
+ax = axes.ravel()
+images = data.lfw_subset()
+for i in range(20):
+    ax[i].imshow(images[90+i], cmap=plt.cm.gray)
+    ax[i].axis('off')
+fig.tight_layout()
+plt.show()
 
