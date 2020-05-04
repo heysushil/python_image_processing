@@ -1,2 +1,0 @@
-# Topics of Image processing
-

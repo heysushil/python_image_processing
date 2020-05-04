@@ -1,6 +1,8 @@
 # Image manipulation and processing using Numpy and Scipy
 ## For more imformation follow this guideline [scipy]<https://scipy-lectures.org/advanced/image_processing/>
 
+### Note: In scipy imsave is deprecated so use 'imageio' libarary to save
+
     Hi,
     This is a basic concept of image processing using pythons 'numpy' and 'scipy' librarys
 

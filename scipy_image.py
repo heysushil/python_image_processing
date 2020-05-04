@@ -1,12 +1,13 @@
 # misc is changed to imageio.imwrite in version >= 1.2 
 from scipy import misc
+import imageio
 face = misc.face()
 
-misc.imsave('face.png', face) # uses the Image module (PIL)
+imageio.imwrite('face.png', face) # uses the Image module (PIL)
 
-face = misc.imread('face.png')
+face = imageio.imread('face.png')
 # print(type(face))
-type(face)
+# type(face)
 
 face.shape, face.dtype
 
@@ -36,6 +37,25 @@ filelist.sort()
 # print(data)
 
 f = misc.face(gray=True)  # retrieve a grayscale image
+
+
+face[0, 40]
+
+# Slicing
+face[10:13, 20:23]
+
+
+
+face[100:120] = 255
+
+lx, ly = face.shape
+X, Y = np.ogrid[0:lx, 0:ly]
+mask = (X - lx / 2) ** 2 + (Y - ly / 2) ** 2 > lx * ly / 4
+# Masks
+face[mask] = 0
+# Fancy indexing
+face[range(400), range(400)] = 255
+
 import matplotlib.pyplot as plt
 # plt.imshow(f, cmap=plt.cm.gray)
 # plt.imshow(f, cmap=plt.cm.gray, vmin=30, vmax=200)        
@@ -45,6 +65,6 @@ import matplotlib.pyplot as plt
 # plt.contour(f, [50, 200])
 
 # plt.imshow(f[320:340, 510:530], cmap=plt.cm.gray, interpolation='bilinear')        
-plt.imshow(f[320:340, 510:530], cmap=plt.cm.gray, interpolation='nearest') 
+# plt.imshow(f[320:340, 510:530], cmap=plt.cm.gray, interpolation='nearest') 
 
 plt.show()
