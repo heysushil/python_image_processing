@@ -4,23 +4,27 @@ import matplotlib.pyplot as plt
 
 # ZERO WALA MATRIX BANAYA
 a = np.zeros((5,5), dtype=np.int)
-print('\n',a)
+# print('\n',a)
 
 # matix me matrix postion 11 se 13, aur same 21, 31 tak banaya
 a[1:4, 1:4] = 1; 
+aBeforNosice = ndimage.binary_opening(a)
+print('\nBefore noise print square\n\n',aBeforNosice)
 # ek extra 1 add kiya gaya hai 44 postion pe
 a[4, 4] = 1
-print('\n',a)
+# print('\n',a)
 
 # Opening removes small objects
 # yaha small object wo 44 wali postion ka 1 hai jisko remove kiya gaya hai
 smallremove = ndimage.binary_opening(a, structure=np.ones((3,3))).astype(np.int)
-print('\n',smallremove)
+print('\nUsing structue of 3*3 for removing 1 of 4*4 postion\n\n',smallremove)
+smallremove1 = ndimage.binary_opening(smallremove).astype(np.int)
+print('\nPrint with same smallremove value\n\n',smallremove)
 
 # Opening can also smooth corners
 # smooth corners means sare corner edges ko remove kar diya hai
 smoothremove = ndimage.binary_opening(a).astype(np.int)
-print('\n',smoothremove)
+print('\nPrint Value of a including 1 at 4*4 which remove\n\n',smoothremove)
 
 # -----------FINAL 3 RIGHT BOXEX GENERATE BY THIS AREA-------------------------------
 square = np.zeros((32, 32))
@@ -28,8 +32,8 @@ square[10:-10, 10:-10] = 1
 np.random.seed(2)
 # random number me 2 = 2 digit random number generate,  20 = 20 random number length
 x, y = (32*np.random.random((2, 20))).astype(np.int)
-print(x)
-print(y)
+# print(x)
+# print(y)
 square[x, y] = 1
 # 3 alag ndimage method ka use karke 3 alag input generate kiya gaya hai 
 open_square = ndimage.binary_opening(square)
