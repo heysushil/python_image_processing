@@ -1,4 +1,12 @@
 # Image manipulation and processing using Numpy and Scipy
+
+# यूट्यूब चैनल पर कुछ जरूरी विडो लिंक
+
+1. Python Basic and Advance ट्यूटोरियल प्लेलिस्ट https://www.youtube.com/playlist?list=PLK6wiPavf7QikS9PMYrGZXz1HlE1KZLD3
+2. PHP Projects प्लेलिस्ट https://www.youtube.com/playlist?list=PLK6wiPavf7QiEj6IPc3lkjz1wR4w9RM6B
+3. GitHubट्यूटोरियल प्लेलिस्ट  https://www.youtube.com/watch?v=LUyVs2MTlTM&list=PLK6wiPavf7Qjydpc5v-hdIoqCx2V19pHP
+
+
 ## For more imformation follow this guideline [scipy](https://scipy-lectures.org/advanced/image_processing/)
 
 ### Note: In scipy imsave is deprecated so use 'imageio' libarary to save
@@ -33,11 +41,6 @@
 
 अपना सुझाव जरूर दो और अगर आपके पास कोई प्रोजेक्ट है जिसे आप दूसरों के साथ साझा करना चाहते हो तो मुझसे संपर्क कर सकते हो।  heykyakaru@gmail.com पर । 
 
-# यूट्यूब चैनल पर कुछ जरूरी विडो लिंक
-
-1. Python Basic and Advance ट्यूटोरियल प्लेलिस्ट https://www.youtube.com/playlist?list=PLK6wiPavf7QikS9PMYrGZXz1HlE1KZLD3
-2. PHP Projects प्लेलिस्ट https://www.youtube.com/playlist?list=PLK6wiPavf7QiEj6IPc3lkjz1wR4w9RM6B
-3. GitHubट्यूटोरियल प्लेलिस्ट  https://www.youtube.com/watch?v=LUyVs2MTlTM&list=PLK6wiPavf7Qjydpc5v-hdIoqCx2V19pHP
 
 
 अगर टाइम हो तो हमारे सोशल मीडिया पेज को भी फॉलो कर सकते हो। 
