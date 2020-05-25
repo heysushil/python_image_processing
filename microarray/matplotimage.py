@@ -3,32 +3,37 @@ from PIL import Image
 # import matplotlib.image as image
 import matplotlib.pyplot as plt
 from scipy import ndimage
+import seaborn as sb
+from sklearn import io, color
+
+lina_color = io.imread(path+img)
+lina_gray = color.rgb2gray(lina_color)
+img = Image.open('microarray/data/gdsDraw.png')
+
+plt.imshow(img)
+plt.show()
+exit()
 
 # fetch the image
 img = Image.open('microarray/data/gdsDraw.png')
+
 # img.shape provide dimention and color fomate like in this case it's 3 = RGB
 # img.shape, img.dtype
 # conver image to numpy array
 img2array = np.asarray(img)
-print(img2array.shape,img2array.dtype)
-
+imgshap = img2array.shape
+imgdatatype = img2array.dtype
+# print(img2array)
 # create pillow image
-pillowimageByNPArray = Image.fromarray(img2array)
-pillowimageSave = Image.fromarray(img2array).save('microarray/data/arrayImag.png')
+# pillowimageByNPArray = Image.fromarray(img2array)
+# pillowimageSave = Image.fromarray(img2array).save('microarray/data/arrayImag.png')
 
 # slicing image
-croppedImg = img2array[00:84, 254:1335]
-newimg = Image.fromarray(croppedImg)
+smallone = img2array[00:84, 255:300] > 254
 
-# blur image by gussain filter
-# blurImg = ndimage.gaussian_filter(newimg, sigma=3)
-# veryBlurImg = ndimage.gaussian_filter(croppedImg, sigma=9)
-
-# median by ndimage median fillter
-medianofImg = ndimage.median_filter(newimg, )
-
-# for one result
-plt.imshow(medianofImg)
+plt.figure(num=2,figsize=(8,6))
+# plt.annotate(s, smallone)
+plt.imshow(smallone)
 plt.show()
 exit()
 # for showing image
