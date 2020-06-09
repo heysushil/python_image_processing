@@ -1,30 +1,30 @@
-'''
-For getting diff b/w 2 images use these libraries if don't have install it or update them
-
-Image Difference with OpenCV and Python
-
-pip install --upgrade scikit-image
-pip install --upgrade imutils
-pip install opencv-contrib-python
-
-'''
-
-# import the necessary packages
-from skimage.measure import compare_ssim
-import argparse
-import imutils
+# you need to download these 2 librarys to find the differen b/w 2 images
 import cv2
-# construct the argument parse and parse the arguments
-ap = argparse.ArgumentParser()
-ap.add_argument("-f", "--first", required=True,
-	help="first input image")
-ap.add_argument("-s", "--second", required=True,
-	help="second")
-args = vars(ap.parse_args())
-print(args)
-# load the two input images
-imageA = cv2.imread(args["first"])
-imageB = cv2.imread(args["second"])
-# convert the images to grayscale
-grayA = cv2.cvtColor(imageA, cv2.COLOR_BGR2GRAY)
-grayB = cv2.cvtColor(imageB, cv2.COLOR_BGR2GRAY)
+import numpy as np
+
+# cv2.imreade use to load the image
+# I'm used 2 images to find the diff b/w them
+# on img folder in repository have 3 images face.png and face2.png are same images and if you run the code with those images you get if condition
+image1 = cv2.imread("img/face.png")
+image2 = cv2.imread("img/face1.png")
+
+'''
+cv2's method subtract fetch the both images or in simple way says that the subtract method subtracting array of image if found any different b/w both images
+'''
+difference = cv2.subtract(image1, image2)
+
+'''
+Then the difference answer will put in numpys any method which find if difference matix values are zero then result in if condition will be true and show the message other wise show the else and also the difference arean on image will be save as result on img folder whcih you will check on img folder and found the difference b/w both images.
+'''
+result = not np.any(difference) #if difference is all zeros it will return False
+
+if result is True:
+    print("The images are the same")
+else:
+    # cv2's imwrite use to create a image from matrix of difference and show the matrix 1 possition area
+    cv2.imwrite("img/result.png", difference)
+    print("the images are different")
+	
+'''
+remeber that on previous class we worded on images and there matrix 0 (zero) and 1 same case happend here. difference method of cv2 will generate the matrix of one on that area which is differ then first image and show the ploted area of that matrix other wise on other case it will generate matrix of zero and have no difference.
+'''
