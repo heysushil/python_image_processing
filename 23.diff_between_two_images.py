@@ -1,12 +1,28 @@
 # you need to download these 2 librarys to find the differen b/w 2 images
+
+
+'''
+Packages for standard desktop environments (Windows, macOS, almost any GNU/Linux distribution)
+
+run pip install opencv-python if you need only main modules
+
+Best to install "opencv-contrib-python" this library for opencv
+run pip install opencv-contrib-python if you need both main and contrib modules (check extra modules listing from OpenCV documentation)
+'''
+
+
 import cv2
 import numpy as np
+
 
 # cv2.imreade use to load the image
 # I'm used 2 images to find the diff b/w them
 # on img folder in repository have 3 images face.png and face2.png are same images and if you run the code with those images you get if condition
-image1 = cv2.imread("img/face.png")
-image2 = cv2.imread("img/face1.png")
+image1 = cv2.imread("img/student.png")
+# face2 and face.png are same imgaes
+# face1 is different image. in this image have one black line at left down corner
+image2 = cv2.imread("img/student2.png")
+
 
 '''
 cv2's method subtract fetch the both images or in simple way says that the subtract method subtracting array of image if found any different b/w both images
